@@ -1,2 +1,31 @@
-node_modules
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Uncomment these if you're using TypeScript
+# Compiled output
+#dist/
+
+# Uncomment if you're using ESLint
+# .eslintcache
+
+# Uncomment if you're using Prettier
+# .prettierignore
+# .prettierrc
+
+# OS generated files
+.idea/
+.vscode/
+
+#firebase serviceAccount credentials
 serviceAccount.json

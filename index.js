@@ -8,12 +8,12 @@ app.use(bodyParser.json());
 const { initializeApp, cert } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
 //add downloadedd service account JSON file path
-var serviceAccount = require("./serviceAccount.json"); 
+var serviceAccount = require("./serviceAccount.json");
 
 initializeApp({
   credential: cert(serviceAccount),
   //add your project_id
-  databaseURL: "peapleapi.firebaseio.com"
+  databaseURL: "peapleapi.firebaseio.com",
 });
 
 app.get("/", (req, res) => {

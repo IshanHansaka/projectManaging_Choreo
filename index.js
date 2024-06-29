@@ -4,7 +4,7 @@ const port = 5000;
 
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
-var serviceAccount = require("serviceAccount.json"); //add downloadedd service account JSON file path
+var serviceAccount = require("./serviceAccount.json"); //add downloadedd service account JSON file path
 
 initializeApp({
     credential: cert(serviceAccount)

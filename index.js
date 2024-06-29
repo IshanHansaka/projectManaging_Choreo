@@ -12,6 +12,7 @@ var serviceAccount = require("./serviceAccount.json");
 
 initializeApp({
   credential: cert(serviceAccount),
+  //add your project_id
   databaseURL: "peapleapi.firebaseio.com"
 });
 

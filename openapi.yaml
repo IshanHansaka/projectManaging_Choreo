@@ -1,22 +1,29 @@
 openapi: 3.0.0
 info:
   title: Firebase Integrated Express API
+  description: API for managing people data
   version: 1.0.0
 servers:
-  - url: http://localhost:3000
+  - url: http://localhost:5000/
 paths:
   /:
     get:
-      summary: Get Hello World message
+      summary: "Root endpoint"
+      description: "Returns a greeting message"
       responses:
-        '200':
-          description: Hello World message
+        "200":
+          description: "Successful response"
+          content:
+            text/plain:
+              schema:
+                type: string
   /projects:
     get:
-      summary: Retrieve all projects
+      summary: "Retrieve all projects"
+      description: "Retrieves a list of projects from the database"
       responses:
-        '200':
-          description: List of projects
+        "200":
+          description: "List of projects"
           content:
             application/json:
               schema:
@@ -24,13 +31,13 @@ paths:
                 items:
                   type: object
                   properties:
-                    # Define properties of a person object here
                     name:
                       type: string
                     description:
                       type: string
     post:
-      summary: Add a new project
+      summary: "Add a new project"
+      description: "Adds a new project to the database"
       requestBody:
         required: true
         content:
@@ -43,25 +50,21 @@ paths:
                 description:
                   type: string
       responses:
-        '200':
+        "200":
           description: Project added successfully
           content:
             application/json:
               schema:
                 type: object
-                properties:
-                  message:
-                    type: string
-                  project:
-                    type: object
-        '500':
-          description: Error adding project
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                  error:
-                    type: string
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+      required:
+        - name
+        - description

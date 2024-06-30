@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Firebase Integrated Express API
-  description: API for managing people data
+  description: API for managing projects
   version: 1.0.0
 servers:
   - url: http://localhost:5000/
@@ -58,7 +58,7 @@ paths:
                 type: object
 components:
   schemas:
-    Person:
+    Project:
       type: object
       properties:
         name:
